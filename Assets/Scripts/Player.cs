@@ -4,15 +4,43 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private float speed = 3f;
+    [SerializeField]
+    private float jumpForce = 8f;
+
+    private Rigidbody rb;
+
+    private void Start()
     {
-        
+        GameManager.SetPlayer(this);
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DoAction(Action actionCode)
     {
-        
+        switch (actionCode)
+        {
+            case Action.MoveUp:
+                break;
+            case Action.MoveDown:
+                break;
+            case Action.MoveLeft:
+                transform.position += speed * Time.deltaTime * Vector3.left;
+                break;
+            case Action.MoveRight:
+                transform.position += speed * Time.deltaTime * Vector3.right;
+                break;
+            case Action.MoveStop:
+                break;
+            case Action.Attack:
+                break;
+            case Action.Jump:
+                rb.velocity = Vector3.zero;
+                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                break;
+            default:
+                break;
+        }
     }
 }

@@ -26,6 +26,6 @@ public class GameManager : MonoBehaviour
 
     public static void SetPlayer(Player player)
     {
-        
+        GameManager.player = player;
     }
 }
