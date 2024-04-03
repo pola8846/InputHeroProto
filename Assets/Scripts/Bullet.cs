@@ -36,7 +36,7 @@ public class Bullet : Projectile
         {
             Destroy(gameObject, lifeTime);
         }
-        transform.Translate(Vector3.back);
+        //transform.Translate(Vector3.back);
     }
 
     private void Update()
