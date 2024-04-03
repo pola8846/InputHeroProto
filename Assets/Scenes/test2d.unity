@@ -508,6 +508,7 @@ GameObject:
   - component: {fileID: 288837599}
   - component: {fileID: 288837598}
   - component: {fileID: 288837600}
+  - component: {fileID: 288837601}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -602,6 +603,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   originPos: {x: 0, y: 0, z: 0}
+  smooth: {fileID: 288837601}
+  trackingDistance: 1
+--- !u!114 &288837601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288837596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c4c6ba63f3deb4d93294cdb399b835, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directionPos: {x: 0, y: 0, z: 0}
+  minSpeed: 1
+  minSpeedDistance: 0.5
+  maxSpeed: 15
+  maxSpeedDistance: 4
 --- !u!1 &450529904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,7 +1521,7 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   speed: 7
-  jumpForce: 300
+  jumpForce: 350
 --- !u!1 &1826013030
 GameObject:
   m_ObjectHideFlags: 0
