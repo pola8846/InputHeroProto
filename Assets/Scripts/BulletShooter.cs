@@ -6,4 +6,6 @@ public class BulletShooter : MonoBehaviour
 {
     [SerializeField]
     private Bullet bullet;
+
+
 }

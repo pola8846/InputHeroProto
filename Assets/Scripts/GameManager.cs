@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 
     private static Player2D player2D;
     public static Player2D Player2D => player2D;
+
+    public float gameSpeed = 1;
+    public float bulletSpeed = 1;
     private void Awake()
     {
         //ΩÃ±€≈Ê
