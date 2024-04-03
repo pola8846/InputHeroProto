@@ -17,11 +17,11 @@ public class InputManager : MonoBehaviour
         {
             if (!input.Value.isTrigerOnce && Input.GetKey(input.Value.key))
             {
-                GameManager.Player.DoAction(input.Value.action);
+                GameManager.Player2D.DoAction(input.Value.action);
             }
             if (input.Value.isTrigerOnce&&Input.GetKeyDown(input.Value.key))
             {
-                GameManager.Player.DoAction(input.Value.action);
+                GameManager.Player2D.DoAction(input.Value.action);
             }
         }
     }

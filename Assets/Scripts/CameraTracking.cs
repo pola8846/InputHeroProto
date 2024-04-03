@@ -14,6 +14,13 @@ public class CameraTracking : MonoBehaviour
     }
     void Update()
     {
-        transform.position = GameManager.Player.transform.position + originPos;
+        if (GameManager.Player!=null)
+        {
+            transform.position = GameManager.Player.transform.position + originPos;
+        }
+        else
+        {
+            transform.position = GameManager.Player2D.transform.position + originPos;
+        }
     }
 }
