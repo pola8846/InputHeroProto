@@ -33,8 +33,6 @@ public class Player : MonoBehaviour
                 break;
             case Action.MoveStop:
                 break;
-            case Action.Attack:
-                break;
             case Action.Jump:
                 rb.velocity = Vector3.zero;
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);

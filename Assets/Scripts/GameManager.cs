@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     private static Player2D player2D;
     public static Player2D Player2D => player2D;
+    private static InputManager inputManager;
+    public static InputManager InputManager => inputManager;
 
     public float gameSpeed = 1;
     public float bulletSpeed = 1;
@@ -36,6 +38,10 @@ public class GameManager : MonoBehaviour
     public static void SetPlayer(Player2D player)
     {
         GameManager.player2D = player;
+    }
+    public static void SetManager(InputManager inputManager)
+    {
+        GameManager.inputManager=inputManager;
     }
 }
 

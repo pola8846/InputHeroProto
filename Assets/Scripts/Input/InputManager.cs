@@ -10,6 +10,10 @@ public class InputManager : MonoBehaviour
     [SerializedDictionary("Action", "Input")]
     private SerializedDictionary<KeyCode, InputKey> inputs = new();
 
+    private void Start()
+    {
+        GameManager.SetManager(this);
+    }
 
     private void Update()
     {
@@ -55,5 +59,6 @@ public enum Action
     MoveRight,
     MoveStop,
     Jump,
-    Attack,
+    AttackRange,
+    AttackMelee,
 }

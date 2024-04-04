@@ -14,13 +14,9 @@ public class HitBox : MonoBehaviour
 
         //공격인지 체크
         Projectile projectile = collision.GetComponent<Projectile>();
-        if (projectile == null)
+        if (projectile != null)
         {
-            return;
-        }
-        //누구 총알/히트박스인지 체크
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
+            //누구 총알/히트박스인지 체크
             switch (characterType)
             {
                 case CharacterType.player:
@@ -39,6 +35,29 @@ public class HitBox : MonoBehaviour
                     break;
             }
         }
+
+        DamageArea area = collision.GetComponent<DamageArea>();
+        if (area != null)
+        {
+            switch (characterType)
+            {
+                case CharacterType.player:
+                    if (area.CharacterType == CharacterType.enemy)//적 총알이면
+                    {
+                        area.DealDamage(unit);
+                    }
+                    break;
+                case CharacterType.enemy:
+                    if (area.CharacterType == CharacterType.player)//플레이어 총알이면
+                    {
+                        area.DealDamage(unit);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        
         
     }
 }

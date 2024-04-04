@@ -18,7 +18,6 @@ public class CameraTracking : MonoBehaviour
         Vector3 targetPos = GameManager.Player2D.transform.position + originPos;
         if (Vector3.Distance(transform.position, targetPos) > trackingDistance)
         {
-            Debug.Log($"{Vector3.Distance(transform.position, targetPos)}, {trackingDistance}");
             if (GameManager.Player != null)
             {
                 transform.position = targetPos;

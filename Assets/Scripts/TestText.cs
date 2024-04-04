@@ -6,6 +6,7 @@ using TMPro;
 public class TestText : MonoBehaviour
 {
     private TMP_Text text;
+    public Unit unit;
 
     private void Start()
     {
@@ -17,6 +18,10 @@ public class TestText : MonoBehaviour
         string temp_S = "";
         temp_S += "PlayerHP: ";
         temp_S += GameManager.Player2D.Health.ToString();
+        temp_S += '\n';
+        temp_S += "EnemyHP: ";
+        temp_S += unit.Health.ToString();
+
         text.text = temp_S;
     }
 }
