@@ -17,16 +17,30 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
+        bool isMoving = false;
         foreach (var input in inputs)
         {
             if (!input.Value.isTrigerOnce && Input.GetKey(input.Value.key))
             {
+                if (input.Value.action == Action.MoveLeft|| input.Value.action == Action.MoveRight)
+                {
+                    isMoving = true;
+                }
                 GameManager.Player2D.DoAction(input.Value.action);
             }
             if (input.Value.isTrigerOnce&&Input.GetKeyDown(input.Value.key))
             {
+                if (input.Value.action == Action.MoveLeft || input.Value.action == Action.MoveRight)
+                {
+                    isMoving = true;
+                }
                 GameManager.Player2D.DoAction(input.Value.action);
             }
+        }
+
+        if (!isMoving)
+        {
+            GameManager.Player2D.DoAction(Action.MoveStop);
         }
     }
 }
@@ -61,4 +75,7 @@ public enum Action
     Jump,
     AttackRange,
     AttackMelee,
+    DashLeft,
+    DashRight,
+
 }
