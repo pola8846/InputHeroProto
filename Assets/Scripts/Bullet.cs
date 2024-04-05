@@ -11,12 +11,13 @@ public class Bullet : Projectile
     private float speed;
     private BulletMoveType moveType;
 
-    public void Initialize(BulletMoveType moveType, Vector2 dir, float speed, float turnSpeed=0, float lifeTime = 0)
+    public void Initialize(BulletMoveType moveType, Vector2 dir, float damage, float speed, float turnSpeed=0, float lifeTime = 0)
     {
         this.moveType = moveType;
         direction = dir;
         this.speed = speed;
         this.turnSpeed = turnSpeed;
+        this.damage = damage;
         if (lifeTime > 0)
         {
             Destroy(gameObject, lifeTime);

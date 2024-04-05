@@ -40,7 +40,6 @@ public class Player2D : Unit
 
     private Rigidbody2D rb;
 
-    private Vector3 lastVelocity;
     [SerializeField]
     private GameObject dmgArea;
     [SerializeField]
@@ -83,7 +82,7 @@ public class Player2D : Unit
                 }
                 break;
             case Action.MoveStop:
-                //movement = 0;
+                movement = 0;
                 break;
             case Action.AttackRange:
                 Shoot();
@@ -117,7 +116,9 @@ public class Player2D : Unit
         {
             shooter.bulletSpeedMax = shooter.bulletSpeedMin = atkRangeSpeed;
             shooter.bulletAngleMax = shooter.bulletAngleMin = atkSideB ? -90 : 90;
+            shooter.bulletDamageMax = shooter.bulletDamageMin = atkRangeDamage;
             shooter.triger = true;
+
             atkTimer = Time.time;
         }
     }

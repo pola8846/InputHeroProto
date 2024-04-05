@@ -27,7 +27,8 @@ public class BulletShooter : MonoBehaviour
     public float bulletSpeedMax = 1;
     public float bulletAngleMin = 90;
     public float bulletAngleMax = 90;
-
+    public float bulletDamageMin = 1;
+    public float bulletDamageMax = 1;
 
     public bool triger = false;
 
@@ -53,7 +54,7 @@ public class BulletShooter : MonoBehaviour
                     GameObject go = Instantiate(bulletGO, transform.position, transform.rotation);
                     Bullet bullet = go.GetComponent<Bullet>();
 
-                    bullet.Initialize(BulletMoveType.straight, direction, Random.Range(bulletSpeedMin, bulletSpeedMax), lifeTime: 10f);
+                    bullet.Initialize(BulletMoveType.straight, direction, Random.Range(bulletDamageMin, bulletDamageMax), Random.Range(bulletSpeedMin, bulletSpeedMax), lifeTime: 10f);
                 }
                 break;
 
@@ -69,7 +70,7 @@ public class BulletShooter : MonoBehaviour
                         GameObject go = Instantiate(bulletGO, transform.position, transform.rotation);
                         Bullet bullet = go.GetComponent<Bullet>();
 
-                        bullet.Initialize(BulletMoveType.straight, direction, Random.Range(bulletSpeedMin, bulletSpeedMax), lifeTime: 10f);
+                        bullet.Initialize(BulletMoveType.straight, direction, Random.Range(bulletDamageMin, bulletDamageMax), Random.Range(bulletSpeedMin, bulletSpeedMax), lifeTime: 10f);
 
                         quat *= quatAtOnce;
                     }

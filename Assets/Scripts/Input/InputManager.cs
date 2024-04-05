@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     [SerializedDictionary("Action", "Input")]
     private SerializedDictionary<KeyCode, InputKey> inputs = new();
 
+    public SerializedDictionary<KeyCode, Skill> skills = new();
     private void Start()
     {
         GameManager.SetManager(this);
