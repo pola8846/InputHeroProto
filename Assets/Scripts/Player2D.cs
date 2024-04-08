@@ -342,7 +342,7 @@ public class Player2D : Unit
         shooter.isDestroyAfterHit = effect.isDestroyAfterHit;
 
 
-        shooter.gameObject.transform.position = (Vector3)effect.offset;
+        shooter.gameObject.transform.position = (effect.subjectToDirection && !atkSideB)? -(Vector3)effect.offset : (Vector3)effect.offset;
         if (effect.isSubjectToUnitPosition)
         {
             shooter.gameObject.transform.position += transform.position;

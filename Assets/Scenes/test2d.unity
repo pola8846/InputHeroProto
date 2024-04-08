@@ -1842,7 +1842,6 @@ GameObject:
   - component: {fileID: 1565245895}
   - component: {fileID: 1565245894}
   - component: {fileID: 1565245893}
-  - component: {fileID: 1565245896}
   - component: {fileID: 1565245897}
   m_Layer: 6
   m_Name: Player
@@ -2020,32 +2019,6 @@ MonoBehaviour:
   dmgArea: {fileID: 1268129416435016813, guid: f490b486bdd9c584c9980ec6e439e134, type: 3}
   AtkPosL: {fileID: 1091539471}
   AtkPosR: {fileID: 1241694891}
---- !u!114 &1565245896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565245888}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08ffd844ae8ba46428dccf04298ae206, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletGO: {fileID: 3587744790765748945, guid: 122f1927a4398a848b3482026936e78d, type: 3}
-  bulletNum: 1
-  shootType: 0
-  bulletSpeedMin: 1
-  bulletSpeedMax: 1
-  bulletAngleMin: 90
-  bulletAngleMax: 90
-  bulletDamageMin: 1
-  bulletDamageMax: 1
-  isHitOnce: 0
-  isDestroyAfterHit: 0
-  lifeTime: 0
-  lifeDistance: 0
-  triger: 0
 --- !u!251 &1565245897
 PlatformEffector2D:
   m_ObjectHideFlags: 0
