@@ -644,8 +644,16 @@ MonoBehaviour:
         isTrigerOnce: 0
   skills:
     _serializedList:
-    - Key: 0
-      Value: {fileID: 0}
+    - Key: 113
+      Value:
+        _serializedList:
+        - Key: 0
+          Value: {fileID: 11400000, guid: b73bb85d7defe7c46b579f339730e14a, type: 2}
+    - Key: 32
+      Value:
+        _serializedList:
+        - Key: 1
+          Value: {fileID: 11400000, guid: 11bd5eb4b5ae82147904d2803cd4a278, type: 2}
 --- !u!1 &288837596
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +779,7 @@ MonoBehaviour:
   directionPos: {x: 0, y: 0, z: 0}
   minSpeed: 1
   minSpeedDistance: 0.5
-  maxSpeed: 15
+  maxSpeed: 25
   maxSpeedDistance: 4
 --- !u!114 &288837602
 MonoBehaviour:
@@ -833,6 +841,64 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!1 &405364437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 405364438}
+  - component: {fileID: 405364439}
+  m_Layer: 6
+  m_Name: Shoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &405364438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405364437}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1565245892}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &405364439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405364437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ffd844ae8ba46428dccf04298ae206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletGO: {fileID: 3587744790765748945, guid: 122f1927a4398a848b3482026936e78d, type: 3}
+  bulletNum: 1
+  shootType: 0
+  bulletSpeedMin: 1
+  bulletSpeedMax: 1
+  bulletAngleMin: 90
+  bulletAngleMax: 90
+  bulletDamageMin: 1
+  bulletDamageMax: 1
+  isHitOnce: 0
+  isDestroyAfterHit: 0
+  lifeTime: 0
+  lifeDistance: 0
+  triger: 0
 --- !u!1 &450529904
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +937,10 @@ MonoBehaviour:
   bulletAngleMax: 129.375
   bulletDamageMin: 1
   bulletDamageMax: 1
+  isHitOnce: 0
+  isDestroyAfterHit: 0
+  lifeTime: 10
+  lifeDistance: 0
   triger: 0
 --- !u!4 &450529906
 Transform:
@@ -1399,6 +1469,10 @@ MonoBehaviour:
   bulletAngleMax: 360
   bulletDamageMin: 1
   bulletDamageMax: 1
+  isHitOnce: 0
+  isDestroyAfterHit: 0
+  lifeTime: 10
+  lifeDistance: 0
   triger: 0
 --- !u!4 &979256884
 Transform:
@@ -1484,6 +1558,10 @@ MonoBehaviour:
   bulletAngleMax: 135
   bulletDamageMin: 1
   bulletDamageMax: 1
+  isHitOnce: 0
+  isDestroyAfterHit: 0
+  lifeTime: 10
+  lifeDistance: 0
   triger: 0
 --- !u!4 &1111757439
 Transform:
@@ -1839,6 +1917,7 @@ Transform:
   - {fileID: 940970605}
   - {fileID: 1241694892}
   - {fileID: 1091539472}
+  - {fileID: 405364438}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1565245893
@@ -1927,6 +2006,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1000
   maxHealth: 1000
+  effectQueueChecker: 0
+  effectCanMoveChecker: 0
   speed: 7
   dashSpeed: 20
   dashDistance: 4
@@ -1946,7 +2027,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565245888}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08ffd844ae8ba46428dccf04298ae206, type: 3}
   m_Name: 
@@ -1960,6 +2041,10 @@ MonoBehaviour:
   bulletAngleMax: 90
   bulletDamageMin: 1
   bulletDamageMax: 1
+  isHitOnce: 0
+  isDestroyAfterHit: 0
+  lifeTime: 0
+  lifeDistance: 0
   triger: 0
 --- !u!251 &1565245897
 PlatformEffector2D:
@@ -2241,6 +2326,10 @@ MonoBehaviour:
   bulletAngleMax: 370
   bulletDamageMin: 1
   bulletDamageMax: 1
+  isHitOnce: 0
+  isDestroyAfterHit: 0
+  lifeTime: 10
+  lifeDistance: 0
   triger: 0
 --- !u!4 &1882439994
 Transform:

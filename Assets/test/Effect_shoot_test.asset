@@ -12,5 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25baeb2e6307104baabecf05e4acef3, type: 3}
   m_Name: Effect_shoot_test
   m_EditorClassIdentifier: 
-  b: 0
-  a: 0
+  duration: 0.2
+  trigerInstant: 1
+  trigerBlock: 1
+  subjectToDirection: 1
+  earlyDelay: 0
+  isMoveOnEarlyDelay: 1
+  lateDelay: 0
+  isMoveOnLateDelay: 1
+  prefeb: {fileID: 3587744790765748945, guid: 122f1927a4398a848b3482026936e78d, type: 3}
+  shootType: 0
+  damageMin: 1
+  damageMax: 1
+  isHitOnce: 0
+  isDestroyAfterHit: 0
+  offset: {x: 0, y: 0}
+  directionAngleMin: -90
+  directionAngleMax: -90
+  speedMin: 10
+  speedMax: 10
+  lifeTime: 0
+  lifeDistance: 15

@@ -8,5 +8,4 @@ public class Skill : ScriptableObject
 {
     public string Name;
     public List<Effect> Effects;
-
 }

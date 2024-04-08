@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour
     [SerializedDictionary("Action", "Input")]
     private SerializedDictionary<KeyCode, InputKey> inputs = new();
 
-    public SerializedDictionary<KeyCode, Skill> skills = new();
+    public SerializedDictionary<KeyCode, SerializedDictionary<SkillTiming, Skill>> skills = new();
     private void Start()
     {
         GameManager.SetManager(this);
@@ -23,13 +23,13 @@ public class InputManager : MonoBehaviour
         {
             if (!input.Value.isTrigerOnce && Input.GetKey(input.Value.key))
             {
-                if (input.Value.action == Action.MoveLeft|| input.Value.action == Action.MoveRight)
+                if (input.Value.action == Action.MoveLeft || input.Value.action == Action.MoveRight)
                 {
                     isMoving = true;
                 }
                 GameManager.Player2D.DoAction(input.Value.action);
             }
-            if (input.Value.isTrigerOnce&&Input.GetKeyDown(input.Value.key))
+            if (input.Value.isTrigerOnce && Input.GetKeyDown(input.Value.key))
             {
                 if (input.Value.action == Action.MoveLeft || input.Value.action == Action.MoveRight)
                 {
@@ -38,11 +38,40 @@ public class InputManager : MonoBehaviour
                 GameManager.Player2D.DoAction(input.Value.action);
             }
         }
-
         if (!isMoving)
         {
             GameManager.Player2D.DoAction(Action.MoveStop);
         }
+
+        foreach (var margedSkill in skills)
+        {
+            if (Input.GetKeyDown(margedSkill.Key))//누를 때
+            {
+                if (margedSkill.Value.ContainsKey(SkillTiming.Down))
+                {
+                    GameManager.Player2D.DoAction(SkillTiming.Down, margedSkill.Value[SkillTiming.Down]);
+                }
+            }
+            else if (Input.GetKeyUp(margedSkill.Key))//뗄 때
+            {
+                if (margedSkill.Value.ContainsKey(SkillTiming.Up))
+                {
+                    GameManager.Player2D.DoAction(SkillTiming.Up, margedSkill.Value[SkillTiming.Up]);
+                }
+                if (margedSkill.Value.ContainsKey(SkillTiming.Stay))
+                {
+                    GameManager.Player2D.DoAction(SkillTiming.Stay, margedSkill.Value[SkillTiming.Stay], true);
+                }
+            }
+            else if (Input.GetKey(margedSkill.Key))//누르고 있을 때
+            {
+                if (margedSkill.Value.ContainsKey(SkillTiming.Stay))
+                {
+                    GameManager.Player2D.DoAction(SkillTiming.Stay, margedSkill.Value[SkillTiming.Stay], false);
+                }
+            }
+        }
+
     }
 }
 
@@ -79,4 +108,12 @@ public enum Action
     DashLeft,
     DashRight,
 
+}
+
+[Serializable]
+public enum SkillTiming
+{
+    Down,
+    Stay,
+    Up,
 }

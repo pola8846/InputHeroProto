@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1fdf00d0d2501438e9efeed60eeeb8, type: 3}
-  m_Name: Effect_move_test
+  m_Script: {fileID: 11500000, guid: 170e0facb7d298d43a9fb8bb4338096a, type: 3}
+  m_Name: Effect_ChangeColor_test
   m_EditorClassIdentifier: 
-  duration: 0.2
-  trigerInstant: 0
-  subjectToDirection: 1
+  duration: 0.5
+  trigerInstant: 1
+  trigerBlock: 1
+  subjectToDirection: 0
   earlyDelay: 0
   isMoveOnEarlyDelay: 0
   lateDelay: 0
   isMoveOnLateDelay: 0
-  direction: {x: 1, y: 1}
-  speed: 25
-  lifeDistance: 5
+  color: {r: 0.754717, g: 0.252759, b: 0.252759, a: 0}

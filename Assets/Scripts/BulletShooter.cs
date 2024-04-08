@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BulletShooter : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject bulletGO;
+    public GameObject bulletGO;
 
     [SerializeField]
     private int bulletNum = 1;
@@ -29,6 +28,12 @@ public class BulletShooter : MonoBehaviour
     public float bulletAngleMax = 90;
     public float bulletDamageMin = 1;
     public float bulletDamageMax = 1;
+
+    public bool isHitOnce;//한 번만 충돌 가능한가?
+    public bool isDestroyAfterHit;//충돌 후 사라지는가?
+
+    public float lifeTime = 0;
+    public float lifeDistance = 0;
 
     public bool triger = false;
 
@@ -54,7 +59,9 @@ public class BulletShooter : MonoBehaviour
                     GameObject go = Instantiate(bulletGO, transform.position, transform.rotation);
                     Bullet bullet = go.GetComponent<Bullet>();
 
-                    bullet.Initialize(BulletMoveType.straight, direction, Random.Range(bulletDamageMin, bulletDamageMax), Random.Range(bulletSpeedMin, bulletSpeedMax), lifeTime: 10f);
+                    bullet.Initialize(BulletMoveType.straight,
+                        direction, Random.Range(bulletDamageMin, bulletDamageMax), Random.Range(bulletSpeedMin, bulletSpeedMax),
+                        lifeTime: lifeTime, lifeDistance: lifeDistance);
                 }
                 break;
 
@@ -70,7 +77,9 @@ public class BulletShooter : MonoBehaviour
                         GameObject go = Instantiate(bulletGO, transform.position, transform.rotation);
                         Bullet bullet = go.GetComponent<Bullet>();
 
-                        bullet.Initialize(BulletMoveType.straight, direction, Random.Range(bulletDamageMin, bulletDamageMax), Random.Range(bulletSpeedMin, bulletSpeedMax), lifeTime: 10f);
+                        bullet.Initialize(BulletMoveType.straight,
+                            direction, Random.Range(bulletDamageMin, bulletDamageMax), Random.Range(bulletSpeedMin, bulletSpeedMax),
+                            lifeTime: lifeTime, lifeDistance: lifeDistance);
 
                         quat *= quatAtOnce;
                     }
@@ -80,7 +89,7 @@ public class BulletShooter : MonoBehaviour
             default:
                 break;
         }
-        
+
     }
 }
 

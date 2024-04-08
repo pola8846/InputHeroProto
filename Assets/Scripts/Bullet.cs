@@ -10,8 +10,15 @@ public class Bullet : Projectile
     [SerializeField]
     private float speed;
     private BulletMoveType moveType;
+    private float lifeDistance = 0f;
+    private Vector3 originPos;
 
-    public void Initialize(BulletMoveType moveType, Vector2 dir, float damage, float speed, float turnSpeed=0, float lifeTime = 0)
+    private void Start()
+    {
+        originPos = transform.position;
+    }
+
+    public void Initialize(BulletMoveType moveType, Vector2 dir, float damage, float speed, float turnSpeed=0, float lifeTime = 0f, float lifeDistance = 0f)
     {
         this.moveType = moveType;
         direction = dir;
@@ -22,11 +29,17 @@ public class Bullet : Projectile
         {
             Destroy(gameObject, lifeTime);
         }
-        //transform.Translate(Vector3.back);
+        this.lifeDistance = lifeDistance;
+        originPos = transform.position;
     }
 
     private void Update()
     {
+        if (lifeDistance > 0 && Vector3.Distance(originPos, transform.position) >= lifeDistance)
+        {
+            Destroy(gameObject);
+            return;
+        }
         if (direction==null)
         {
             return;

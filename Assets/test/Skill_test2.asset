@@ -10,7 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73df83dd82701a148acba7f922b225be, type: 3}
-  m_Name: Skill_test
+  m_Name: Skill_test2
   m_EditorClassIdentifier: 
   Name: 
-  Effects: []
+  Effects:
+  - {fileID: 11400000, guid: 0e6c6e7d4daf0b74dac9309d660e4cff, type: 2}
+  earlyDelay: 0
+  isMoveOnEarlyDelay: 0
+  lateDelay: 0
+  isMoveOnLateDelay: 0
+  subjectToDirection: 0
