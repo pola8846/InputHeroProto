@@ -360,6 +360,8 @@ public class Player2D : Unit
         shooter.bulletSpeedMin = effect.speedMin;
         shooter.lifeDistance = effect.lifeDistance;
         shooter.lifeTime = effect.lifeTime;
+
+        shooter.BulletNum = effect.bulletNum;
         //애초에 이펙트를 슈터에 넣으면 됐을 것 같음
         //다음에 할땐 고쳐야 할 것
 

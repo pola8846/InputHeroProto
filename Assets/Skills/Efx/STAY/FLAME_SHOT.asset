@@ -15,12 +15,13 @@ MonoBehaviour:
   duration: 0.15
   trigerInstant: 1
   trigerBlock: 1
-  subjectToDirection: 0
+  subjectToDirection: 1
   earlyDelay: 0
   isMoveOnEarlyDelay: 1
   lateDelay: 0
   isMoveOnLateDelay: 1
   prefeb: {fileID: 6199090713097478946, guid: e69222f8544fce54eb32ec55d01c9f87, type: 3}
+  bulletNum: 4
   shootType: 0
   damageMin: 0.1
   damageMax: 0.1
@@ -28,9 +29,9 @@ MonoBehaviour:
   isDestroyAfterHit: 0
   offset: {x: 1.05, y: 0}
   isSubjectToUnitPosition: 1
-  directionAngleMin: -90
-  directionAngleMax: -90
-  speedMin: 3
-  speedMax: 3
+  directionAngleMin: -80
+  directionAngleMax: -100
+  speedMin: 5
+  speedMax: 8
   lifeTime: 1.1
   lifeDistance: 0

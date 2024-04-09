@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326184b11a426e941b766660f10b3750, type: 3}
   m_Name: FLAME_SPDCHANGE
   m_EditorClassIdentifier: 
-  duration: 1
+  duration: 0.16
   trigerInstant: 1
   trigerBlock: 0
   subjectToDirection: 1
@@ -21,4 +21,4 @@ MonoBehaviour:
   lateDelay: 0
   isMoveOnLateDelay: 1
   increaseAmount: -5
-  lifeTime: 1
+  lifeTime: 0
