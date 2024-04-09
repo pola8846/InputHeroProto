@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 5383548978617323121}
   - component: {fileID: 4304097064397432354}
   - component: {fileID: -3819784146097931582}
-  - component: {fileID: 8645421652568918542}
-  m_Layer: 0
+  - component: {fileID: -3738775945987931898}
+  m_Layer: 9
   m_Name: hAMMER'
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,19 +146,24 @@ MonoBehaviour:
   characterType: 0
   hitOnce: 0
   damage: 1
---- !u!114 &8645421652568918542
-MonoBehaviour:
+--- !u!95 &-3738775945987931898
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268129416435016813}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f14539748d460e247bdf0e9ed74910e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterType: 0
-  hitOnce: 0
-  damage: 1
-  speed: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b26fc803a87df34cb7319da873e97a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
