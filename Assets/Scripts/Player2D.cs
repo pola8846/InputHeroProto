@@ -77,7 +77,7 @@ public class Player2D : Unit
             case Action.MoveLeft:
                 if (canMove && effectCanMoveChecker == 0)
                 {
-                    movement = speed * -1;
+                    movement = Mathf.Max(0, speed) * -1;
                     //transform.position += speed * Time.deltaTime * GameManager.Instance.gameSpeed * Vector3.left;
                     atkSideB = false;
                 }
@@ -85,7 +85,7 @@ public class Player2D : Unit
             case Action.MoveRight:
                 if (canMove && effectCanMoveChecker == 0)
                 {
-                    movement = speed;
+                    movement = Mathf.Max(0, speed);
                     //transform.position += speed * Time.deltaTime * GameManager.Instance.gameSpeed * Vector3.right;
                     atkSideB = true;
                 }
@@ -163,7 +163,7 @@ public class Player2D : Unit
     {
         if (Time.time - atkTimer >= atkRangeCooltime)
         {
-            shooter.bulletSpeedMax = shooter.bulletSpeedMin = atkRangeSpeed;
+            shooter.bulletSpeedMax = shooter.bulletSpeedMin = Mathf.Max(0, atkRangeSpeed);
             shooter.bulletAngleMax = shooter.bulletAngleMin = atkSideB ? -90 : 90;
             shooter.bulletDamageMax = shooter.bulletDamageMin = atkRangeDamage;
             shooter.triger = true;
@@ -293,7 +293,7 @@ public class Player2D : Unit
         isDashing = true;
 
         //방향 설정
-        movement_Dash = effect.direction.normalized * effect.speed;
+        movement_Dash = effect.direction.normalized * Mathf.Max(0,effect.speed);
         if (effect.subjectToDirection && !atkSideB)
         {
             movement_Dash.x *= -1;
