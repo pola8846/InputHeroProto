@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d25baeb2e6307104baabecf05e4acef3, type: 3}
-  m_Name: Effect_shoot_test
+  m_Name: Cleave
   m_EditorClassIdentifier: 
-  duration: 0.1
+  duration: 0
   trigerInstant: 1
   trigerBlock: 1
   subjectToDirection: 1
-  earlyDelay: 0
-  isMoveOnEarlyDelay: 1
-  lateDelay: 0
-  isMoveOnLateDelay: 1
-  prefeb: {fileID: 3587744790765748945, guid: 122f1927a4398a848b3482026936e78d, type: 3}
+  earlyDelay: 0.1
+  isMoveOnEarlyDelay: 0
+  lateDelay: 0.2
+  isMoveOnLateDelay: 0
+  prefeb: {fileID: 1268129416435016813, guid: 0bd1ae7b8e6ab074cb4a1f8d5a34531d, type: 3}
   shootType: 0
-  damageMin: 1
-  damageMax: 1
-  isHitOnce: 0
+  damageMin: 2
+  damageMax: 5
+  isHitOnce: 1
   isDestroyAfterHit: 0
-  offset: {x: 1, y: 0}
+  offset: {x: 2.59, y: 0.15}
   isSubjectToUnitPosition: 1
   directionAngleMin: -90
   directionAngleMax: -90
-  speedMin: 20
-  speedMax: 20
-  lifeTime: 0
-  lifeDistance: 15
+  speedMin: 0
+  speedMax: 0
+  lifeTime: 0.3
+  lifeDistance: 0

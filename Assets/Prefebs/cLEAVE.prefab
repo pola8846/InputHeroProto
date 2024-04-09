@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4304097064397432354}
   - component: {fileID: -3819784146097931582}
   - component: {fileID: 8645421652568918542}
-  m_Layer: 0
-  m_Name: DmgArea
+  m_Layer: 9
+  m_Name: cLEAVE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.399, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1.9255, z: 0.1}
+  m_LocalScale: {x: 3.12, y: 1.27, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 0
-  hitOnce: 1
+  hitOnce: 0
   damage: 1
 --- !u!114 &8645421652568918542
 MonoBehaviour:
@@ -159,6 +159,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterType: 0
-  hitOnce: 1
+  hitOnce: 0
   damage: 1
   speed: 0
