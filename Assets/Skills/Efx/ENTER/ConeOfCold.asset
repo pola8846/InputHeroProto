@@ -15,12 +15,14 @@ MonoBehaviour:
   duration: 0
   trigerInstant: 1
   trigerBlock: 1
-  subjectToDirection: 1
   earlyDelay: 0
   isMoveOnEarlyDelay: 1
-  lateDelay: 0.6
+  lateDelay: 0.4
   isMoveOnLateDelay: 0
+  subjectToDirection: 1
+  needStayTime: 0
   prefeb: {fileID: 3587744790765748945, guid: 3dd6ef60c58f64c49bb6157c73aec3a3, type: 3}
+  bulletNum: 15
   shootType: 1
   damageMin: 1
   damageMax: 1

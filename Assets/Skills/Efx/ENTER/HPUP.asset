@@ -15,9 +15,10 @@ MonoBehaviour:
   duration: 1
   trigerInstant: 1
   trigerBlock: 1
-  subjectToDirection: 0
   earlyDelay: 1.5
-  isMoveOnEarlyDelay: 0
+  isMoveOnEarlyDelay: 1
   lateDelay: 0
   isMoveOnLateDelay: 0
+  subjectToDirection: 0
+  needStayTime: 0
   color: {r: 0.31795007, g: 1, b: 0.1273585, a: 0}

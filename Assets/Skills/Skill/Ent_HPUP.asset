@@ -15,3 +15,4 @@ MonoBehaviour:
   Name: 
   Effects:
   - {fileID: 11400000, guid: 071afd7bfafe7694291cd05fa84e78ca, type: 2}
+  isStack: 1

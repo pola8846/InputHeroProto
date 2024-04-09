@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25baeb2e6307104baabecf05e4acef3, type: 3}
   m_Name: FireBall
   m_EditorClassIdentifier: 
-  duration: 1.5
+  duration: 0
   trigerInstant: 1
-  trigerBlock: 1
-  subjectToDirection: 0
+  trigerBlock: 0
   earlyDelay: 1.5
-  isMoveOnEarlyDelay: 1
+  isMoveOnEarlyDelay: 0
   lateDelay: 0
   isMoveOnLateDelay: 1
+  subjectToDirection: 1
+  needStayTime: 0
   prefeb: {fileID: 2310425502599232211, guid: 43e181c65dc4ca647b6f3c1bfa3083a7, type: 3}
+  bulletNum: 1
   shootType: 0
   damageMin: 7
   damageMax: 7

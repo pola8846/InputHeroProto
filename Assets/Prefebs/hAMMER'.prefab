@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4304097064397432354}
   - component: {fileID: -3819784146097931582}
   - component: {fileID: -3738775945987931898}
+  - component: {fileID: 6762900147739092488}
   m_Layer: 9
   m_Name: hAMMER'
   m_TagString: Bullet
@@ -167,3 +168,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6762900147739092488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268129416435016813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14539748d460e247bdf0e9ed74910e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterType: 0
+  hitOnce: 1
+  damage: 1
+  speed: 0

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73df83dd82701a148acba7f922b225be, type: 3}
-  m_Name: Ent_FireBall
+  m_Name: BlockA
   m_EditorClassIdentifier: 
   Name: 
   Effects:
-  - {fileID: 11400000, guid: b23ea78f4c3f9a245801ed584777bc80, type: 2}
-  - {fileID: 11400000, guid: 8e0c10eb6cbde4c4586c1b5d7c8ce801, type: 2}
-  isStack: 1
+  - {fileID: 11400000, guid: a293a8873955f694f97e1aa3f6fdb5bb, type: 2}
+  - {fileID: 11400000, guid: 560efd8ec1ea6b049a69f23b38e15e7a, type: 2}
+  isStack: 0

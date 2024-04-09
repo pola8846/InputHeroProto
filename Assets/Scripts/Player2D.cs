@@ -116,7 +116,7 @@ public class Player2D : Unit
         }
     }
 
-    public void DoAction(SkillTiming timing, Skill skill, bool stopStay = false)
+    public void DoAction(SkillTiming timing, Skill skill, bool stopStay = false, float stayTime = -1, bool isStack = false, KeyCode code = KeyCode.None)
     {
         //Debug.Log($"{timing}, {stopStay}");
         foreach (Effect effect in skill.Effects)
@@ -124,14 +124,23 @@ public class Player2D : Unit
             switch (timing)
             {
                 case SkillTiming.Down://누를 때
+                    AddEffectAtQueue(effect, isStack);
+                    break;
                 case SkillTiming.Up://뗄 때
-                    AddEffectAtQueue(effect);
+                    if (effect.needStayTime > 0 && stayTime >= effect.needStayTime)
+                    {
+                        AddEffectAtQueue(effect, isStack);
+                    }
+                    else if (effect.needStayTime <= 0)
+                    {
+                        AddEffectAtQueue(effect, isStack);
+                    }
                     break;
 
                 case SkillTiming.Stay://누르기 시작할 때
                     if (!stopStay)//누를 때
                     {
-                        AddEffectAtQueue(effect);
+                        AddEffectAtQueue(effect, isStack);
                     }
                     else//뗄 때
                     {
@@ -182,9 +191,9 @@ public class Player2D : Unit
 
     }
 
-    public void AddEffectAtQueue(Effect effect)//큐에 효과 추가. 
+    public void AddEffectAtQueue(Effect effect, bool isStack = false)//큐에 효과 추가. 
     {
-        if (effectQueueChecker == 0)
+        if (effectQueueChecker == 0 || isStack)
         {
             effectQueue.Enqueue(effect);
         }
@@ -258,6 +267,9 @@ public class Player2D : Unit
             case Effect_Shoot effect_Shoot:
                 coroutine = StartCoroutine(Shoot(effect_Shoot));
                 break;
+            case Effect_BlockKey effect_blockKey:
+                coroutine = StartCoroutine(BlockKey(effect_blockKey));
+                break;
             default:
                 break;
         }
@@ -293,7 +305,7 @@ public class Player2D : Unit
         isDashing = true;
 
         //방향 설정
-        movement_Dash = effect.direction.normalized * Mathf.Max(0,effect.speed);
+        movement_Dash = effect.direction.normalized * Mathf.Max(0, effect.speed);
         if (effect.subjectToDirection && !atkSideB)
         {
             movement_Dash.x *= -1;
@@ -342,7 +354,7 @@ public class Player2D : Unit
         shooter.isDestroyAfterHit = effect.isDestroyAfterHit;
 
 
-        shooter.gameObject.transform.position = (effect.subjectToDirection && !atkSideB)? -(Vector3)effect.offset : (Vector3)effect.offset;
+        shooter.gameObject.transform.position = (effect.subjectToDirection && !atkSideB) ? -(Vector3)effect.offset : (Vector3)effect.offset;
         if (effect.isSubjectToUnitPosition)
         {
             shooter.gameObject.transform.position += transform.position;
@@ -369,6 +381,11 @@ public class Player2D : Unit
         yield return new WaitForSeconds(effect.duration);
     }
 
+    public IEnumerator BlockKey(Effect_BlockKey effect)
+    {
+        GameManager.InputManager.LockKey(effect.KeyCode, effect.duration);
+        yield return new WaitForSeconds(effect.duration);
+    }
 
     static Queue<Effect> RemoveAll(Queue<Effect> queue, Type valueToRemove)
     {

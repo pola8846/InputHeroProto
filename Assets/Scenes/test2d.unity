@@ -380,7 +380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletShooter1: {fileID: 979256883}
   bulletShooter2: {fileID: 1882439993}
-  time: 1.25
+  time: 2
 --- !u!114 &173603270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,8 +393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0a5c7fbaee9f043a32034bb802a751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  maxHealth: 20
+  health: 20000
+  maxHealth: 20000
 --- !u!50 &173603271
 Rigidbody2D:
   serializedVersion: 4
@@ -647,13 +647,36 @@ MonoBehaviour:
     - Key: 113
       Value:
         _serializedList:
+        - Key: 0
+          Value: {fileID: 11400000, guid: 40664699e5d272d469ea1f38649d58ea, type: 2}
         - Key: 1
           Value: {fileID: 11400000, guid: f23e994aa8590d848a7b1d01ccdd1db8, type: 2}
-    - Key: 32
+        - Key: 2
+          Value: {fileID: 11400000, guid: 777cc37703255e643bfd543933cbf16f, type: 2}
+    - Key: 114
       Value:
         _serializedList:
         - Key: 0
-          Value: {fileID: 11400000, guid: 11bd5eb4b5ae82147904d2803cd4a278, type: 2}
+          Value: {fileID: 11400000, guid: 8c6292a9f97077a4daa36fc7193cd58a, type: 2}
+    - Key: 116
+      Value:
+        _serializedList:
+        - Key: 0
+          Value: {fileID: 11400000, guid: 1eb542c0b131dd849aed341d6f34425c, type: 2}
+    - Key: 102
+      Value:
+        _serializedList:
+        - Key: 0
+          Value: {fileID: 11400000, guid: 65e3a3e68fd41264db3f61daeddcb728, type: 2}
+    - Key: 101
+      Value:
+        _serializedList:
+        - Key: 0
+          Value: {fileID: 11400000, guid: a0f74372fab2e3a4592d1eaa65483d26, type: 2}
+        - Key: 1
+          Value: {fileID: 11400000, guid: f23e994aa8590d848a7b1d01ccdd1db8, type: 2}
+        - Key: 2
+          Value: {fileID: 11400000, guid: 33fac7b5719c23d479fadf53153f44f6, type: 2}
 --- !u!1 &288837596
 GameObject:
   m_ObjectHideFlags: 0
