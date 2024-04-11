@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4384189d302ca2498b4c1cdff6d7259, type: 3}
   m_Name: BlockD
   m_EditorClassIdentifier: 
-  duration: 3
+  duration: 20
   trigerInstant: 1
   trigerBlock: 0
   earlyDelay: 0

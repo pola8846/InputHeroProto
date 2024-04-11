@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170e0facb7d298d43a9fb8bb4338096a, type: 3}
   m_Name: BlockColor
   m_EditorClassIdentifier: 
-  duration: 3
+  duration: 20
   trigerInstant: 1
   trigerBlock: 0
   earlyDelay: 0
